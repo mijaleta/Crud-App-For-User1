@@ -31,10 +31,21 @@
             <td><%= user.name %></td>
             <td><%= user.email %></td>
           <td clas>
-      <a href="/edit/<%= user.id%>"> <button class="btn btn-warning">Edit</button></a>
-      <form action="/delete/<%= user._id%>" method="post">
-        <button  type="submit" class="btn btn-danger">Delete</button>
-      </form>
+
+            <div class="row">
+              <div class="col">
+                <a href="/edit/<%= user.id%>">
+                  <button class="btn btn-warning">edit</button>
+                </a>
+              </div>
+              <div class="col">
+                <form action="/delete/<%= user._id%>" method="post">
+                  <button type="submit" class="btn btn-danger">delete</button>
+                </form>
+              </div>
+            </div>
+            
+            
           </td>
         </tr>
         <%})%>
