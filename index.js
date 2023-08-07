@@ -5,7 +5,12 @@ const app = express()
 const router = require('./routes/route')
 const productRouter = require('./routes/productroutes')
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.get('/',(req,res)=>{
+    res.render('choice')
+})
 app.use('/users',router)
+
 app.set('view engine','ejs')
 app.use('/products',productRouter)
 require('dotenv').config();
